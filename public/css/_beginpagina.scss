@@ -1,0 +1,43 @@
+@import "variables";
+
+.peilConditie{
+  font-size: 18px;
+  margin-top: 50px;
+  alignment-baseline:central;
+  text-anchor:middle;
+}
+.riemDetectie{
+  font-size: 18px;
+  margin-top: 50px;
+  alignment-baseline:central;
+  text-anchor:middle;
+}
+
+.grid-front {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+
+}
+.grid-item {
+
+  font-size: 18px;
+
+}
+
+
+@media screen and (max-width: 800px) {
+  .grid-front{
+    grid-template-columns: 1fr;
+    padding: 0px;
+  }
+  .grid-item{
+    margin-bottom: 20px;
+  }
+  .peilConditie{
+    margin-top: 20px;
+  }
+  .riemDetectie{
+    margin-top: 20px;
+  }
+}

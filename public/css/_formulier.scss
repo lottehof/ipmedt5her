@@ -1,0 +1,92 @@
+@import "variables";
+
+.formulier {
+
+    &__label {
+      display: inline-block;
+      width: 75%;
+
+    }
+
+    &__input {
+      margin-top: 1px;
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    &__input[type=text] {
+      border: 1px solid #ccc;
+    }
+
+    &__input[type=submit] {
+      background-color: $kleur-secundair;
+      color: black;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+
+    &__select {
+      border: 1px solid #ccc;
+      margin-top: 1px;
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+
+
+      &__option {
+
+      }
+    }
+
+    &__submit {
+
+    }
+  }
+
+
+@media screen and (max-width: 600px) {
+  .formulier {
+
+      &__label {
+        width: $max-width-320;
+      }
+
+      &__input {
+        width: $max-width-320;
+
+      }
+
+      &__input[type=text] {
+
+      }
+
+      &__input[type=submit] {
+        width: $max-width-320;
+
+
+        &:hover {
+
+        }
+      }
+
+      &__select {
+        width: $max-width-320;
+
+        &__option {
+
+        }
+      }
+
+      &__submit {
+
+      }
+    }
+}

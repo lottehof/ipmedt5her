@@ -1,0 +1,80 @@
+@import "variables";
+
+.menu {
+  padding: 0 ($standardPadding / 2);
+  height: $menu-height;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: $kleur-primair;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+  &__button {
+    -webkit-appearance: none;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+
+      &__img {
+        cursor: pointer;
+        height: 24px;
+        width: 24px;
+    }
+
+    &__text  {
+      display: none;
+
+
+
+    }
+  }
+}
+
+
+@media screen and (min-width: $media-width-2) {
+  .menu {
+    padding: $standardPadding 0;
+    background-color: $kleur-primair;
+    position: absolute;
+    top: 0;
+    width: $menu-width;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &__button{
+      margin-bottom: $standardPadding;
+      padding: $standardPadding / 3;
+      border-radius: 0;
+      width: 140px;
+      display: block;
+      text-align: left;
+
+      &__img {
+        display: inline-block;
+        float: left;
+        padding-bottom: 5px;
+      }
+
+      &__text {
+        display: inline-block;
+        margin-left: 8px;
+        font-weight: bold;
+
+        &-noIcon {
+          display: inline-block;
+          margin-left: 32px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

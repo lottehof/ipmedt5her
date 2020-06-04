@@ -1,0 +1,22 @@
+$cardWidth: 260px;
+$standardPadding: 26px;
+$borderRadius: 6px;
+$max-width-320: 216px;
+
+$sectionWidthLarge: 1200px;
+
+$iconSizeMiddle: 36px;
+
+$menu-width: 180px; // In _container mediaquery meda-width-2 .container width - manually change value due to calc not accepting variable.
+$menu-height: 60px;
+
+// Kleuren
+$darkGreyBackground: #CDC8CA;
+$mediumGreyBackground: #FBF9F9;
+
+$kleur-primair: #3aafa9;
+$kleur-secundair: #a6e3e9;
+$kleur-aandacht: #ffc5a1;
+
+// Mediaqueries
+$media-width-2: 480px;

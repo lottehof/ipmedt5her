@@ -1,0 +1,51 @@
+@import "variables";
+
+.circle-chart{
+  margin-top: 10px;
+
+    &__circle {
+  animation: circle-chart-fill 2s reverse; /* 1 */
+  transform: rotate(-90deg); /* 2, 3 */
+  transform-origin: center; /* 4 */
+}
+ &__info {
+  animation: circle-chart-appear 2s forwards;
+  opacity: 0;
+  transform: translateY(-0.2em);
+}
+.circle-chart__circle{
+
+}
+
+}
+
+@keyframes circle-chart-fill {
+  to { stroke-dasharray: 100 200; }
+}
+
+@keyframes circle-chart-appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+text{
+  font-family: 'Nunito', sans-serif;
+}
+/* Layout styles only, not needed for functionality */
+
+
+.grid {
+  display: grid;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+
+@media (min-width: 31em) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

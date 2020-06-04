@@ -1,0 +1,66 @@
+@import "variables";
+
+.button {
+  background-color: $kleur-secundair;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: $kleur-primair;
+  cursor: pointer;
+  &:hover {
+    background-color: $kleur-primair;
+    text-decoration: underline;
+  }
+  &:active {
+    background-color: $kleur-secundair;
+    text-decoration: underline;
+  }
+
+  &__groot {
+    @extend .button;
+    padding: 15px 32px;
+    font-size: 16px;
+    width: $max-width-320;
+  }
+
+  &__klein {
+    @extend .button;
+    padding: 10px 20px;
+    font-size: 12px;
+    width: 108px;
+  }
+
+
+  &__message {
+    @extend .button;
+    padding: 10px 20px;
+    font-size: 12px;
+    width: 208px;
+  }
+  &__verifyEmail{
+    @extend .button;
+    font-size: 14px;
+    padding: 10px 20px;
+    margin-top: 5px;
+
+  }
+
+
+}
+
+@media screen and (max-width: 600px) {
+  .button{
+
+
+    &__groot{
+
+      // width: 100%;
+
+    }
+  }
+
+}

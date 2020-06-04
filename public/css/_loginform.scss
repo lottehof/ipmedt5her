@@ -1,0 +1,88 @@
+@import "variables";
+
+.loginform {
+    width: 100%;
+
+  &__ul {
+    overflow: hidden;
+    height: 50px;
+    width: inherit;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__li {
+      width: inherit;
+
+      &__button {
+        text-decoration: none;
+        width: 100%;
+        line-height: 50px;
+        background-color: $mediumGreyBackground;
+        text-align: center;
+        font-weight: bold;
+
+        &:hover {
+          background-color: $kleur-aandacht;
+        }
+        &:focus {
+          background-color: $kleur-secundair;
+        }
+      }
+    }
+  }
+
+
+  &__container {
+    clear: both;
+    position: relative;
+    height: 480px;
+
+    &__content {
+      background-color: $kleur-secundair;
+      position: absolute;
+      padding: 10px 20px;
+      height: inherit;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.js--active {
+  background-color: $kleur-secundair;
+}
+
+.js--active-panel {
+  z-index: 1;
+}
+
+@media screen and (min-width: 600px) {
+  .loginform {
+      width: 300px;
+
+    &__ul {
+
+      &__li {
+
+        &__button {
+
+          &:focus, :hover {
+          }
+        }
+      }
+    }
+
+
+    &__container {
+
+      &__content {
+          width: 300px;
+      }
+    }
+  }
+}
