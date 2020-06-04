@@ -14,8 +14,9 @@ class CreateDetectieTable extends Migration
     public function up()
     {
         Schema::create('detectie', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->string('timeStamp');
+            $table->string('hond')->references('naam')->on('hond');
+            $table->string('hondDetectie');
         });
     }
 
@@ -26,6 +27,9 @@ class CreateDetectieTable extends Migration
      */
     public function down()
     {
+        Schema::table('hond', function(Blueprint $table){
+            $table->dropForeign('detectie_hond_foreign');
+        });
         Schema::dropIfExists('detectie');
     }
 }
