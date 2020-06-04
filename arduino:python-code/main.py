@@ -11,6 +11,7 @@ if __name__ == "__main__":
     urlRiem = 'sensor/riemdetectie'
     urlWater =  'sensor/peilConditie'
     urlGewicht = 'sensor/gewichtdetectie'
+    urlDetectie = 'sesnor/detectie'
 
 
     port = serial.Serial("/dev/ttyACM0", baudrate=9600, timeout=3.0)
@@ -20,7 +21,7 @@ if __name__ == "__main__":
         now = str(datetime.datetime.now())
 
 	#watersensor
-	port.write("\r\nw")     
+	port.write("\r\nw")
         rcv = port.readline().strip()
         print(rcv)
 
@@ -50,6 +51,16 @@ if __name__ == "__main__":
             print(x)
             print(BASEURL + urlRiem + "/" + now + "/" + rcv)
 
+        #Detectie van de hond voor de back
+        port.write("\r\nd")
+        rcv = port.readline().strip()
+
+        if (rcv.startswith("Hd")):
+            x = requests.get(BASEURL + urlDetectie + "/store/" + now + "/" + rcv[2:])
+            print(x)
+            print(BASEURL + urlDetectie + "/" + now + "/" + rcv[2:])
+
+            
         now = str(datetime.datetime.now())
 
         time.sleep(1)

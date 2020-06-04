@@ -13,7 +13,7 @@ HX711 scale(3, 2); //DT is verbonden met A3 en SCK is verbonden met A2
 
 float calibration_factor = -372; //calibratiefactor
 double units;
-String unitsInString;       
+String unitsInString;
 char serialRead;
 
 //Druksensor
@@ -22,6 +22,10 @@ int drukvalue = 0;
 bool riemIn = false;
 bool riemUit = false;
 const int ledGreen = 10;
+const int pinD0 = 8;
+const int pinA0 = A2;
+int IRvalueA = 0;
+int IRvalueD = 0;
 
 //Watersensor
 const int watersensor = A1; //Sensor AO pin to Arduino pin A0
@@ -36,6 +40,8 @@ void setup()
   scale.tare();
   lcd.init();
   lcd.backlight();
+  pinMode(pinD0,INPUT);
+  pinMode(pinA0,INPUT);
 }
 
 void loop()
@@ -52,18 +58,18 @@ void loop()
       Serial.print("Gw");
       Serial.println(unitsInString + " gram");
 
-      
+
      // Set the cursor on the first column and first row.
       lcd.setCursor(0, 0); //Zet de tekst van units op de eerste rij en de eerste plek
       lcd.print(units); // Print hoveel grams op scherm
       lcd.setCursor(4, 0); //Zet grams op de eerst rij en 4e plek
       lcd.print(" gram");
-      
+
     }
     if(serialRead == 'w'){
       watervalue = analogRead(watersensor); //Lees de waarde van watersensor en slaat het op in watervalue
-  
-      if (watervalue<=480){ //Als de waarde op het laagste streepje van de watersensor is doet die volgende. 
+
+      if (watervalue<=480){ //Als de waarde op het laagste streepje van de watersensor is doet die volgende.
            Serial.print("Wl");
            Serial.println("Water level: 0mm - Empty!");
            break;
@@ -74,48 +80,48 @@ void loop()
         break;
 
         }
-      else if (watervalue>530 && watervalue<=615){ 
+      else if (watervalue>530 && watervalue<=615){
         Serial.print("Wl");
         Serial.println("Water level: 5 mm to 10mm");
         break;
- 
+
         }
-      else if (watervalue>615 && watervalue<=660){ 
-        Serial.print("Wl");   
+      else if (watervalue>615 && watervalue<=660){
+        Serial.print("Wl");
         Serial.println("Water level: 10mm to 15mm");
         break;
-  
-        } 
+
+        }
       else if (watervalue>660 && watervalue<=680){
         Serial.print("Wl");
         Serial.println("Water level: 15mm to 20mm");
         break;
- 
+
         }
       else if (watervalue>680 && watervalue<=690){
         Serial.print("Wl");
-        Serial.println("Water level: 20mm to 25mm"); 
+        Serial.println("Water level: 20mm to 25mm");
 
         }
       else if (watervalue>690 && watervalue<=700){
         Serial.print("Wl");
         Serial.println("Water level: 25mm to 30mm");
         break;
-    
+
         }
        else if (watervalue>700 && watervalue<=705){
-         Serial.print("Wl");   
+         Serial.print("Wl");
          Serial.println("Water level: 30mm to 35mm");
          break;
- 
+
          }
-       else if (watervalue>705){ 
+       else if (watervalue>705){
          Serial.print("Wl");
          Serial.println("Water level: 35mm to 40mm");
          break;
- 
+
          }
-     } 
+     }
       if (serialRead == 'r') {
       drukvalue = analogRead(druksensor);
       if(drukvalue > 1 && riemIn == false) {
@@ -131,20 +137,25 @@ void loop()
         break;
       }
     }
-    
-         // Groene led uitlezen van server en controleren
-        else if (serialRead == 'g'){
-            switch(Serial.read()){
-              case '1':
-                digitalWrite(ledGreen, HIGH);
-                break;
-               case '0':
-                 digitalWrite(ledGreen, LOW);
-                 break;
-      }
+
+    if(serialRead == 'd') {
+        if(IRvalueD == 1){
+          Serial.print("Hd");
+      Serial.println("De hond staat niet voor de bak");
     }
+      else{
+        Serial.println("De hond staat voor de bak");
+    }
+      delay(1000);
+
+    IRvalueA = analogRead(pinA0);
+    IRvalueD = digitalRead(pinD0);
+
+    }
+
+
   }
- 
+
   delay(100);
-  
+
 }
