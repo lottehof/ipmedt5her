@@ -11,7 +11,7 @@ class WaterController extends Controller
         $water = new Water();
         $water->timeStamp = $date;
         $water->hond = "Bobby";
-        $water->peilConditie = $conditie;
+        $water->hondDetectie = $conditie;
 
         try{
           $water->save();

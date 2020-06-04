@@ -87,6 +87,8 @@ Route::group(['prefix' => 'sensor'], function () {
   Route::get('/peilConditie/store/{date}/{conditie}', 'WaterController@store');
 
   Route::get('/gewichtdetectie/store/{data}/{conditie}', 'VoerenController@store');
+
+  Route::get('/hondDetectie/store/{data}/{detectie}', 'DetectieController@store');
 });
 
 
