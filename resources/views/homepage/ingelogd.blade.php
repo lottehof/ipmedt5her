@@ -23,7 +23,12 @@
    let riemDetectie3 = riemDetectie2.replace('"}]', "");  //haalt "}] weg en vervangt het met niks
    let riemdetectie4 = riemDetectie3.replace('"', ""); //haalt " weg en vervangt het met niks
 
-
+//detectiesensor
+  let detectie = {!! json_encode($hondDetectie ?? '') !!};
+  let hondDetectie = JSON.stringify(detectie);
+  let hondDetectie2 = hondDetectie.slice(hondDetectie.length - 11);
+  let hondDetectie3 = hondDetectie2.replace('"}]', "");
+  let hondDetectie4 = hondDetectie3.replace('"', "");
 
 
 
@@ -60,17 +65,14 @@
     <h3>Waterpeil conditie</h3>
 
     <h2 class="peilConditie" id="peilConditie" alignment-baseline="central" text-anchor="middle" font-size="4"></h2>
-
-
-
   </div>
   <div class="grid-item">
     <h3>Riem detectie</h3>
 
     <h2 class="riemDetectie" id="riemDetectie" alignment-baseline="central" text-anchor="middle" font-size="4"></h2>
-
-
-
+  </div>
+  <div>
+    <h2 class="hondDetectie" id="hondDetectie" alignment-baseline="central" text-anchor="middle" font-size="4" ></h2>
   </div>
 
 </div>

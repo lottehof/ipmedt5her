@@ -11,16 +11,16 @@ if(peilConditie3 === "Water level: 0mm - Empty!" ){
   document.getElementById('peilConditie').innerHTML = "Water level: 0mm - Empty!";
 
 } else if (peilConditie3 === "Water level: 0 mm to 5 mm") {
-        document.getElementById('peilConditie').innerHTML = "	Water level: 0mm to 5mm";
+        document.getElementById('peilConditie').innerHTML = "Water level: 0mm to 5mm";
 
 } else if (peilConditie3 === "Water level: 5 mm to 10mm") {
-        document.getElementById('peilConditie').innerHTML = "	Water level: 5mm to 10mm";
+        document.getElementById('peilConditie').innerHTML = "Water level: 5mm to 10mm";
 
 }  else if (peilConditie3 === "Water level: 10mm to 15mm") {
-        document.getElementById('peilConditie').innerHTML = "	Water level: 10mm to 15mm";
+        document.getElementById('peilConditie').innerHTML = "Water level: 10mm to 15mm";
 
 } else if (peilConditie3 === "Water level: 15mm to 20mm") {
-        document.getElementById('peilConditie').innerHTML = "	Water level: 15mm to 20mm";
+        document.getElementById('peilConditie').innerHTML = "Water level: 15mm to 20mm";
 
 } else if (peilConditie3 === "Water level: 20mm to 25mm") {
         document.getElementById('peilConditie').innerHTML = "Water level: 20mm to 25mm";
@@ -51,6 +51,16 @@ for (var i = 0; i < riemdetectie4.length; i++) {
   }
 }
 
+//Detectiesensor
+for (var i = 0; i < hondDetectie4.length; i++){
+  if( === "De hond staat niet voor de bak" ){
+    document.getElementById('hondDetectie').innerHTML = "De hond staat niet voor de bak";
+} else if ( === "De hond staat voor de bak") {
+        document.getElementById('hondDetectie').innerHTML = "De hond staat voor de bak";
+      }
+  else {
+      document.getElementById('hondDetectie').innerHTML = "Detectie van de hond is onbekend";
+        }
 //gewichtsensor
 let circlegewicht = document.getElementById('circlegewicht');
 //circlegewicht.setAttribute('stroke-dasharray', gewichtConditie4 + ', 100' );
