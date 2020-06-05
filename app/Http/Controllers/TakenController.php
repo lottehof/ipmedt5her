@@ -47,7 +47,7 @@ class TakenController extends Controller
       ])
       ->with('riemdetectie', Uitlaten::all())
       ->with('peilConditie', Water::all())
-      ->with('gewichtDetectie', Voeren::all());
+      ->with('gewichtDetectie', Voeren::all())
       ->with('hondDetectie', Detectie::all());
     }
 
@@ -80,7 +80,7 @@ class TakenController extends Controller
     ])
     ->with('riemdetectie', Uitlaten::all())
     ->with('peilConditie', Water::all())
-    ->with('gewichtDetectie', Voeren::all());
+    ->with('gewichtDetectie', Voeren::all())
     ->with('hondDetectie', Detectie::all());
   }
 }

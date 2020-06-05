@@ -53,7 +53,7 @@ class OverzichtsController extends Controller
       ->with('user', User::all()->where('email','=',Auth::user()->email)->first())
       ->with('riemdetectie', Uitlaten::all())
       ->with('peilConditie', Water::all())
-      ->with('gewichtDetectie', Voeren::all());
+      ->with('gewichtDetectie', Voeren::all())
       ->with('hondDetectie', Detectie::all());
     }
 
@@ -61,7 +61,7 @@ class OverzichtsController extends Controller
       return view('welcome')
       ->with('riemdetectie', Uitlaten::all())
       ->with('peilConditie', Water::all())
-      ->with('gewichtDetectie', Voeren::all());
+      ->with('gewichtDetectie', Voeren::all())
       ->with('hondDetectie', Detectie::all());
     }
 
