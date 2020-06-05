@@ -47,7 +47,7 @@ class SettingsController extends Controller
         ])
         ->with('riemdetectie', Uitlaten::all())
         ->with('peilConditie', Water::all())
-        ->with('gewichtDetectie', Voeren::all());
+        ->with('gewichtDetectie', Voeren::all())
         ->with('hondDetectie', Detectie::all());
 
 

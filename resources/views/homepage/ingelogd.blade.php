@@ -13,7 +13,7 @@
   let gewichtConditie2 = gewichtConditie.slice(gewichtConditie.length - 15); // haalt de eerst 14 elementen van array
   let gewichtConditie3 = gewichtConditie2.replace('"}]', "");  //haalt "}] weg en vervangt het met niks
   let gewichtConditie4 = gewichtConditie3.replace(':"', ""); //haalt :" weg en vervangt het met niks
-  console.log(gewichtConditie3);
+//  console.log(gewichtConditie3);
 //  let gewichtConditie5 = gewichtConditie4.replace('"');
 
 //druksensor
