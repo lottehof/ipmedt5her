@@ -13,6 +13,7 @@ use App\Wandelen;
 use App\Uitlaten;
 use App\Water;
 use App\Voeren;
+use App\Detectie;
 use Auth;
 
 class SettingsController extends Controller
