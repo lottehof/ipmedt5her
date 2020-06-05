@@ -47,6 +47,7 @@ class TakenController extends Controller
       ->with('riemdetectie', Uitlaten::all())
       ->with('peilConditie', Water::all())
       ->with('gewichtDetectie', Voeren::all());
+      ->with('hondDetectie', Detectie::all());
     }
 
     $hond = new Hond();
@@ -79,5 +80,6 @@ class TakenController extends Controller
     ->with('riemdetectie', Uitlaten::all())
     ->with('peilConditie', Water::all())
     ->with('gewichtDetectie', Voeren::all());
+    ->with('hondDetectie', Detectie::all());
   }
 }

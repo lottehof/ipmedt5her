@@ -53,6 +53,7 @@ class OverzichtsController extends Controller
       ->with('riemdetectie', Uitlaten::all())
       ->with('peilConditie', Water::all())
       ->with('gewichtDetectie', Voeren::all());
+      ->with('hondDetectie', Detectie::all());
     }
 
     public function overzicht(){
@@ -60,6 +61,7 @@ class OverzichtsController extends Controller
       ->with('riemdetectie', Uitlaten::all())
       ->with('peilConditie', Water::all())
       ->with('gewichtDetectie', Voeren::all());
+      ->with('hondDetectie', Detectie::all());
     }
 
 }
