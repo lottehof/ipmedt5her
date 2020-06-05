@@ -6,7 +6,7 @@ import requests
 
 
 if __name__ == "__main__":
-    BASEURL = 'https://guokka.maisievdhammen.nl/'
+    BASEURL = 'https://ipmedt5-manouk-lotte.applepi.nl/'
     urlLED = 'sensor/ledstatus'
     urlRiem = 'sensor/riemdetectie'
     urlWater =  'sensor/peilConditie'
@@ -60,7 +60,7 @@ if __name__ == "__main__":
             print(x)
             print(BASEURL + urlDetectie + "/" + now + "/" + rcv[2:])
 
-            
+
         now = str(datetime.datetime.now())
 
         time.sleep(1)
