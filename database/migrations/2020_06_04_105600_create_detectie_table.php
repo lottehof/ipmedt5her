@@ -13,7 +13,7 @@ class CreateDetectieTable extends Migration
      */
     public function up()
     {
-        Schema::create('detectie', function (Blueprint $table) {
+        Schema::create('honddetectie', function (Blueprint $table) {
             $table->string('timeStamp');
             $table->string('hond')->references('naam')->on('hond');
             $table->string('hondDetectie');
@@ -28,8 +28,8 @@ class CreateDetectieTable extends Migration
     public function down()
     {
         Schema::table('hond', function(Blueprint $table){
-            $table->dropForeign('detectie_hond_foreign');
+            $table->dropForeign('honddetectie_hond_foreign');
         });
-        Schema::dropIfExists('detectie');
+        Schema::dropIfExists('honddetectie');
     }
 }

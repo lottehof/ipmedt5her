@@ -13,7 +13,7 @@
   let gewichtConditie2 = gewichtConditie.slice(gewichtConditie.length - 15); // haalt de eerst 14 elementen van array
   let gewichtConditie3 = gewichtConditie2.replace('"}]', "");  //haalt "}] weg en vervangt het met niks
   let gewichtConditie4 = gewichtConditie3.replace(':"', ""); //haalt :" weg en vervangt het met niks
-  console.log(gewichtConditie3);
+//  console.log(gewichtConditie3);
 //  let gewichtConditie5 = gewichtConditie4.replace('"');
 
 //druksensor
@@ -24,9 +24,12 @@
    let riemdetectie4 = riemDetectie3.replace('"', ""); //haalt " weg en vervangt het met niks
 
 //detectiesensor
+
+
+
   let detectie = {!! json_encode($hondDetectie ?? '') !!};
   let hondDetectie = JSON.stringify(detectie);
-  let hondDetectie2 = hondDetectie.slice(hondDetectie.length - 11);
+  let hondDetectie2 = hondDetectie.slice(hondDetectie.length -11);
   let hondDetectie3 = hondDetectie2.replace('"}]', "");
   let hondDetectie4 = hondDetectie3.replace('"', "");
 
@@ -71,12 +74,13 @@
 
     <h2 class="riemDetectie" id="riemDetectie" alignment-baseline="central" text-anchor="middle" font-size="4"></h2>
   </div>
-  <div>
+
+  <div class="grid-item">
     <h3>Detectie van de hond</h3>
     <h2 class="hondDetectie" id="hondDetectie" alignment-baseline="central" text-anchor="middle" font-size="4" ></h2>
   </div>
 
-</div>
+
 
 
 

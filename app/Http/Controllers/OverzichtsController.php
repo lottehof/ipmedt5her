@@ -13,6 +13,7 @@ use App\Wandelen;
 use App\Uitlaten;
 use App\Water;
 use App\Voeren;
+use App\Detectie;
 use Auth;
 
 class OverzichtsController extends Controller
@@ -52,14 +53,16 @@ class OverzichtsController extends Controller
       ->with('user', User::all()->where('email','=',Auth::user()->email)->first())
       ->with('riemdetectie', Uitlaten::all())
       ->with('peilConditie', Water::all())
-      ->with('gewichtDetectie', Voeren::all());
+      ->with('gewichtDetectie', Voeren::all())
+      ->with('hondDetectie', Detectie::all());
     }
 
     public function overzicht(){
       return view('welcome')
       ->with('riemdetectie', Uitlaten::all())
       ->with('peilConditie', Water::all())
-      ->with('gewichtDetectie', Voeren::all());
+      ->with('gewichtDetectie', Voeren::all())
+      ->with('hondDetectie', Detectie::all());
     }
 
 }

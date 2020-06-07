@@ -13,6 +13,7 @@ use App\Wandelen;
 use App\Uitlaten;
 use App\Water;
 use App\Voeren;
+use App\Detectie;
 use Auth;
 
 class TakenController extends Controller
@@ -46,7 +47,8 @@ class TakenController extends Controller
       ])
       ->with('riemdetectie', Uitlaten::all())
       ->with('peilConditie', Water::all())
-      ->with('gewichtDetectie', Voeren::all());
+      ->with('gewichtDetectie', Voeren::all())
+      ->with('hondDetectie', Detectie::all());
     }
 
     $hond = new Hond();
@@ -78,6 +80,7 @@ class TakenController extends Controller
     ])
     ->with('riemdetectie', Uitlaten::all())
     ->with('peilConditie', Water::all())
-    ->with('gewichtDetectie', Voeren::all());
+    ->with('gewichtDetectie', Voeren::all())
+    ->with('hondDetectie', Detectie::all());
   }
 }
