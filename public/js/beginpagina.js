@@ -54,9 +54,9 @@ for (var i = 0; i < riemdetectie4.length; i++) {
 
 //Detectiesensor
 for (var i = 0; i < hondDetectie4.length; i++){
-  if( === "De hond staat niet voor de bak" ){
+  if( hondDetectie4 === "De hond staat niet voor de bak" ){
     document.getElementById('hondDetectie').innerHTML = "De hond staat niet voor de bak";
-} else if ( === "De hond staat voor de bak") {
+} else if ( hondDetectie4 === "De hond staat voor de bak") {
         document.getElementById('hondDetectie').innerHTML = "De hond staat voor de bak";
       }
   else {
