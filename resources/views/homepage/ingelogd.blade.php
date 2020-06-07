@@ -71,12 +71,13 @@
 
     <h2 class="riemDetectie" id="riemDetectie" alignment-baseline="central" text-anchor="middle" font-size="4"></h2>
   </div>
-  <div>
+
+  <div class="grid-item">
     <h3>Detectie van de hond</h3>
     <h2 class="hondDetectie" id="hondDetectie" alignment-baseline="central" text-anchor="middle" font-size="4" ></h2>
   </div>
 
-</div>
+
 
 
 

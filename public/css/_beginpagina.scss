@@ -12,16 +12,23 @@
   alignment-baseline:central;
   text-anchor:middle;
 }
+.hondDetectie{
+  font-size: 18px;
+  margin-top: 50px;
+  alignment-baseline:central;
+  text-anchor:middle;
+
+}
 
 .grid-front {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   padding: 20px;
 
 }
 .grid-item {
-
   font-size: 18px;
+  margin-top: 40px;
 
 }
 
