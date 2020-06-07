@@ -1,7 +1,7 @@
 
 //console.log("hallo");
 //console.log(peilConditie[peilConditie.length-1]);
-console.log($hondDetectie);
+
 console.log("hond detectie " + hondDetectie4);
 //wateersensor
 //for each loop met if statement die check of waarde die sensor ophaalt gelijk is aan .. zo ja wordt dat geprint op pagina
@@ -62,6 +62,7 @@ for (var i = 0; i < hondDetectie4.length; i++){
   else {
       document.getElementById('hondDetectie').innerHTML = "Detectie van de hond is onbekend";
         }
+  }
 //gewichtsensor
 let circlegewicht = document.getElementById('circlegewicht');
 //circlegewicht.setAttribute('stroke-dasharray', gewichtConditie4 + ', 100' );
