@@ -88,7 +88,7 @@ Route::group(['prefix' => 'sensor'], function () {
 
   Route::get('/gewichtdetectie/store/{data}/{conditie}', 'VoerenController@store');
 
-  Route::get('/hondDetectie/store/{data}/{detectie}', 'DetectieController@store');
+  Route::get('/hondDetectie/store/{date}/{detectie}', 'DetectieController@store');
 });
 
 
