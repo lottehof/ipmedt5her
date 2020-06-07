@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detectie extends Model
 {
-    protected $table = "detectie";
+    protected $table = "honddetectie";
     public $timestamps = false;
 
     public function getHondNaam() {

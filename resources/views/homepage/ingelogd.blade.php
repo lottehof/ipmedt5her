@@ -24,9 +24,12 @@
    let riemdetectie4 = riemDetectie3.replace('"', ""); //haalt " weg en vervangt het met niks
 
 //detectiesensor
+
+
+
   let detectie = {!! json_encode($hondDetectie ?? '') !!};
   let hondDetectie = JSON.stringify(detectie);
-  let hondDetectie2 = hondDetectie.slice(hondDetectie.length - 11);
+  let hondDetectie2 = hondDetectie.slice(hondDetectie.length -11);
   let hondDetectie3 = hondDetectie2.replace('"}]', "");
   let hondDetectie4 = hondDetectie3.replace('"', "");
 
