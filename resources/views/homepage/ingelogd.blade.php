@@ -27,7 +27,7 @@
   let detectie = {!! json_encode($hondDetectie ?? '') !!};
   let hondDetectie = JSON.stringify(detectie);
   console.log(hondDetectie);
-  let hondDetectie2 = hondDetectie.slice(hondDetectie.length - 10);
+  let hondDetectie2 = hondDetectie.slice(hondDetectie.length - 31);
   let hondDetectie3 = hondDetectie2.replace('"}]', "");
   let hondDetectie4 = hondDetectie3.replace('"', "");
 
