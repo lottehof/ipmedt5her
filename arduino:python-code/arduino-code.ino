@@ -9,7 +9,7 @@
 
 LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2); //0x27 is ip adress van LCD en 16x2 is formaat van LCD
 
-HX711 scale(3, 2); //DT is verbonden met A3 en SCK is verbonden met A2
+HX711 scale(3, 2); //DT is verbonden met D3 en SCK is verbonden met D2
 
 float calibration_factor = -372; //calibratiefactor
 double units;
@@ -22,6 +22,8 @@ int drukvalue = 0;
 bool riemIn = false;
 bool riemUit = false;
 const int ledGreen = 10;
+
+//Detectiesensor
 const int pinD0 = 8;
 const int pinA0 = A2;
 int IRvalueA = 0;
@@ -139,17 +141,20 @@ void loop()
     }
 
     if(serialRead == 'd') {
+        IRvalueA = analogRead(pinA0);
+        IRvalueD = digitalRead(pinD0);
         if(IRvalueD == 1){
-          Serial.print("Hd");
-      Serial.println("De hond staat niet voor de bak");
+           Serial.print("Hd");
+           Serial.println("De hond staat niet voor de bak");
+           break;
     }
-      else{
+      else {
+        Serial.print("Hd");
         Serial.println("De hond staat voor de bak");
+        break;
     }
       delay(1000);
 
-    IRvalueA = analogRead(pinA0);
-    IRvalueD = digitalRead(pinD0);
 
     }
 

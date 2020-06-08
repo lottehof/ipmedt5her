@@ -11,8 +11,7 @@ if __name__ == "__main__":
     urlRiem = 'sensor/riemdetectie'
     urlWater =  'sensor/peilConditie'
     urlGewicht = 'sensor/gewichtdetectie'
-    urlDetectie = 'sesnor/detectie'
-
+    urlDetectie = 'sensor/hondDetectie'
 
     port = serial.Serial("/dev/ttyACM0", baudrate=9600, timeout=3.0)
 
@@ -20,8 +19,8 @@ if __name__ == "__main__":
         # Huidige tijd tot op de milliseconde
         now = str(datetime.datetime.now())
 
-	#watersensor
-	port.write("\r\nw")
+        #watersensor
+        port.write("\r\nw")
         rcv = port.readline().strip()
         print(rcv)
 
@@ -31,11 +30,10 @@ if __name__ == "__main__":
              print(BASEURL + urlWater + "/" + now + "/" + rcv[2:])
 
 
-	#gewichtsensor
+        #gewichtsensor
         port.write("\r\nv")
         rcv = port.readline().strip()
         print(rcv)
-
         if(rcv.startswith("Gw")):
            x = requests.get(BASEURL + urlGewicht + "/store/" + now + "/" + rcv[2:])
            print(x)
@@ -46,21 +44,23 @@ if __name__ == "__main__":
         port.write("\r\nr")
         rcv = port.readline().strip()
         print(rcv)
-        if (rcv == "riemIn" or rcv == "riemUit"):
+
+        if (rcv == "riem in" or rcv == "riem uit"):
             x = requests.get(BASEURL + urlRiem + "/store/" + now + "/" + rcv)
             print(x)
             print(BASEURL + urlRiem + "/" + now + "/" + rcv)
 
-        #Detectie van de hond voor de back
-        port.write("\r\nd")
+        #Detectie van de hond voor de bak
+         port.write("\r\nd")
         rcv = port.readline().strip()
+        print(rcv)
 
-        if (rcv.startswith("Hd")):
-            x = requests.get(BASEURL + urlDetectie + "/store/" + now + "/" + rcv[2:])
-            print(x)
-            print(BASEURL + urlDetectie + "/" + now + "/" + rcv[2:])
-
+        if(rcv.startswith("Hd")):
+           x = requests.get(BASEURL + urlDetectie + "/store/" + now + "/" + rcv[2:])
+           print(x)
+           print(BASEURL + urlDetectie + "/" + now + "/" + rcv[2:])
 
         now = str(datetime.datetime.now())
+
 
         time.sleep(1)
