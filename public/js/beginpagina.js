@@ -1,8 +1,8 @@
 
 //console.log("hallo");
-//console.log(peilConditie[peilConditie.length-1]);
+console.log(hondDetectie[hondDetectie.length-1]);
 
-console.log("hond detectie " + hondDetectie4);
+console.log("hond detectie = " + hondDetectie4);
 //wateersensor
 //for each loop met if statement die check of waarde die sensor ophaalt gelijk is aan .. zo ja wordt dat geprint op pagina
 for (var i = 0; i < peilConditie3.length; i++) {
